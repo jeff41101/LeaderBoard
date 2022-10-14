@@ -168,16 +168,6 @@ let UserList = [
 		UserName: "Jeff",
 		UserImage: "pic_1.png",
 		Trials: "10"
-	},
-	{
-		UserName: "Jeff",
-		UserImage: "pic_1.png",
-		Trials: "10"
-	},
-	{
-		UserName: "Jeff",
-		UserImage: "pic_1.png",
-		Trials: "10"
 	}
 ]
 
