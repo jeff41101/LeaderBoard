@@ -8,7 +8,7 @@ var month = document.querySelector(".month");
 var items = document.querySelectorAll(".lboard_item");
 var pfp = ["👴", "🧓", "👵", "👧", "🧒", "🧑", "👳", "🤴", "👼", "👩‍🦳", "👨", "👰", "👨‍🦰", "👩‍🦰", "👩‍🦲", "👱‍"];
 
-var userlist_trivia = document.querySelector(".lboard_mem_today");
+//var userlist_trivia = document.querySelector(".lboard_mem_today");
 var userlist_matchinggame = document.querySelector(".lboard_mem_month");
 /////////////////////////////////////////////////
 // Functions
@@ -44,7 +44,7 @@ tabs.forEach(function (tab) {
 	})
 })
 
-const displayTriviaLeaderBoard = function (list, sort = false) {
+/*const displayTriviaLeaderBoard = function (list, sort = false) {
 	var result;
 
 	var settings = {
@@ -86,7 +86,7 @@ const displayTriviaLeaderBoard = function (list, sort = false) {
 			userlist_trivia.insertAdjacentHTML("afterbegin", html);
 		};
 	});
-}
+}*/
 
 const displayMatchingGameLeaderBoard = function (list, sort = false) {
 
@@ -134,5 +134,5 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
 }
 
 
-displayTriviaLeaderBoard();
+//displayTriviaLeaderBoard();
 displayMatchingGameLeaderBoard();
