@@ -60,11 +60,11 @@ const displayTriviaLeaderBoard = function (list, sort = false) {
 	$.ajax(settings).done(function (response) {
 		result = response;
 		userlist_trivia.innerHTML = "";
-		var users = [...result].slice(0, 9).reverse();
+		var users = [...result].slice(0, 7).reverse();
 		var highest = users[0].Score;
-		var lowest = users[8].Score;
+		var lowest = users[6].Score;
 		shuffleArray(pfp);
-		for (let i = 0; i < 9; i++) {
+		for (let i = 0; i < 7; i++) {
 			console.log(typeof users[i].Score);
 			var totalScore = ((lowest - users[i].Score) * 99 / (lowest - highest) - 100) * -1;
 			const html = `
@@ -73,7 +73,7 @@ const displayTriviaLeaderBoard = function (list, sort = false) {
 				<h2>${pfp[i]}</h2>
 			</div>
 			<div class="name_bar">
-				<p><span>${9 - i}.</span> ${users[i].UserName}</p>
+				<pre><p><span>${7 - i}.</span> ${users[i].UserName}    Score: ${users[i].Score}    Time: ${users[i].Time}    Trials: ${users[i].Trials}</p> </pre>
 				<div class="bar_wrap">
 					<div class="inner_bar" style="width: ${parseInt(totalScore, 10)}%"></div>
 				</div>
@@ -105,11 +105,11 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
 	$.ajax(settings).done(function (response) {
 		result = response;
 		userlist_matchinggame.innerHTML = "";
-		var users = [...result].slice(0, 9).reverse();
+		var users = [...result].slice(0, 7).reverse();
 		var highest = users[0].Score;
-		var lowest = users[8].Score;
+		var lowest = users[6].Score;
 		shuffleArray(pfp);
-		for (let i = 0; i < 9; i++) {
+		for (let i = 0; i < 7; i++) {
 			console.log(typeof users[i].Score);
 			var totalScore = ((lowest - users[i].Score) * 99 / (lowest - highest) - 100)* -1;
 			const html = `
@@ -118,7 +118,7 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
 				<h2>${pfp[i]}</h2>
 			</div>
 			<div class="name_bar">
-				<p><span>${9 - i}.</span> ${users[i].UserName}</p>
+				<pre><p><span>${7 - i}.</span> ${users[i].UserName}    Score: ${users[i].Score}    Time: ${users[i].Time}    Trials: ${users[i].Trials}</p> </pre>
 				<div class="bar_wrap">
 					<div class="inner_bar" style="width: ${parseInt(totalScore, 10)}%"></div>
 				</div>
