@@ -104,12 +104,17 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
 
 	$.ajax(settings).done(function (response) {
 		result = response;
+		let l = (result.length > 7) ? 7 : result.length;
+		console.log(l);
 		userlist_matchinggame.innerHTML = "";
-		var users = [...result].slice(0, 7).reverse();
+		var users = [...result].slice(0, l).reverse();
+		console.log(result)
 		var highest = users[0].Score;
-		var lowest = users[6].Score;
+		console.log(highest);
+		var lowest = users[l - 1].Score;
+		console.log(lowest);
 		shuffleArray(pfp);
-		for (let i = 0; i < 7; i++) {
+		for (let i = 0; i < l; i++) {
 			console.log(typeof users[i].Score);
 			var totalScore = ((lowest - users[i].Score) * 99 / (lowest - highest) - 100)* -1;
 			const html = `
@@ -118,7 +123,7 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
 				<h2>${pfp[i]}</h2>
 			</div>
 			<div class="name_bar">
-				<pre><p><span>${7 - i}.</span> ${users[i].UserName}    Score: ${users[i].Score}    Time: ${users[i].Time}    Trials: ${users[i].Trials}</p> </pre>
+				<pre><p><span>${l - i}.</span> ${users[i].UserName}    Score: ${users[i].Score}    Time: ${users[i].Time}    Trials: ${users[i].Trials}</p> </pre>
 				<div class="bar_wrap">
 					<div class="inner_bar" style="width: ${parseInt(totalScore, 10)}%"></div>
 				</div>
