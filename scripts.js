@@ -74,7 +74,7 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
   };
 
   $.ajax(settings).done(function (response) {
-    result = response;
+    result = response.result;
     let l = result.length > 7 ? 7 : result.length;
     console.log(l);
     userlist_matchinggame.innerHTML = "";
