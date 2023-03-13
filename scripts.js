@@ -63,8 +63,8 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
   var result;
 
   var settings = {
-    url: "https://7wda3149g7.execute-api.ap-northeast-1.amazonaws.com/dev/AdminPage/GetScore",
-    // "url": "https://wjuc7h96k7.execute-api.ap-northeast-1.amazonaws.com/dev/GetRank?x-api-key=WHJzpbI0r29A01Hbsg5H776YNuyWe5FI5XCgplRu",
+    // url: "https://7wda3149g7.execute-api.ap-northeast-1.amazonaws.com/dev/AdminPage/GetScore",
+    url: "https://wjuc7h96k7.execute-api.ap-northeast-1.amazonaws.com/dev/GetRank?x-api-key=WHJzpbI0r29A01Hbsg5H776YNuyWe5FI5XCgplRu",
     method: "POST",
     timeout: 0,
     headers: {
@@ -74,7 +74,9 @@ const displayMatchingGameLeaderBoard = function (list, sort = false) {
   };
 
   $.ajax(settings).done(function (response) {
-    result = response.result;
+    result = response;
+    // result = response.result;
+    console.log(typeof result);
     let l = result.length > 7 ? 7 : result.length;
     console.log(l);
     userlist_matchinggame.innerHTML = "";
